@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script defer src="main.js"></script>
+    <title>Week 6 - Carbon Footprint - PRI</title>
+    <style>
+      html {
+        font-size: 22px;
+      }
+      body {
+        background-color: #333;
+        color: whitesmoke;
+      }
+    </style>
+  </head>
+  <body>
+    <form id="form">
+      <fieldset>
+        <legend>Input Carbon Footprint</legend>
+        <div>
+            <label for="">First Name:</label>
+            <input type="text" name="firstname" required/>
+        </div>
+        <div>
+            <label for="">Last Name:</label>
+            <input type="text" name="lastname" required/>
+        </div>
+        <div>
+            <label for="">How many people in your household?:</label>
+            <input type="number" name="housem" required/>
+        </div>
+        <div>
+            <label for="">What is the size of your house?:</label>
+            <input type="text" name="houses" required/>
+        </div>
+        <button type="submit">Submit</button>
+      </fieldset>
+    </form>
+    <div id="output"></div>
+  </body>
+</html>
