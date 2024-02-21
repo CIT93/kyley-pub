@@ -53,55 +53,25 @@ function start(houseHoldMembers, houseSize) {
   const houseHoldPTS = determineHouseHoldPts(houseHoldMembers);
   const houseSizePTS = determineHouseSizePts(houseSize);
   const total = houseHoldPTS + houseSizePTS;
-  // const cfpObj = {
-  //   houseM: houseHoldMembers,
-  //   houseS: houseSize,
-  //   houseMPTS: houseHoldPTS,
-  //   houseSPTS: houseSizePTS,
-  //   cfpTotal: total,
-  // };
-  cfpData.push({
-    houseM: houseHoldMembers,
-    houseS: houseSize,
-    houseMPTS: houseHoldPTS,
-    houseSPTS: houseSizePTS,
-    cfpTotal: total,
-  });
-
-  // displayOutObj(cfpObj);
+  cfpData.push([houseHoldMembers, houseSize, houseHoldPTS, houseSizePTS, total]);
 }
 
-// function displayOutput() {
-//   for (arr of cfpData){
-//     const output = document.getElementById("output");
-//     const newH2 = document.createElement("h2");
-//     newH2.textContent = `Carbon Footprint is ${arr[4]}.`;
-//     const newH3 = document.createElement("h3");
-//     newH3.textContent = `Based on number in and size of home`;
-//     const newP = document.createElement("p");
-//     newP.textContent = `This number is based on the number of people in the house of ${arr[0]} (score: ${arr[2]})`;
-//     newP.textContent += ` and a ${arr[1]} size of home (score: ${arr[3]}).`;
-//     output.appendChild(newH2);
-//     output.appendChild(newH3);
-//     output.appendChild(newP);
-//   }
-// }
 
-// function displayOutput() {
-//   for (let i = 0; i < cfpData.length; i++){
-//     const output = document.getElementById("output");
-//     const newH2 = document.createElement("h2");
-//     newH2.textContent = `Carbon Footprint is ${cfpData[i][4]}.`;
-//     const newH3 = document.createElement("h3");
-//     newH3.textContent = `Based on number in and size of home`;
-//     const newP = document.createElement("p");
-//     newP.textContent = `This number is based on the number of people in the house of ${cfpData[i][0]} (score: ${cfpData[i][2]})`;
-//     newP.textContent += ` and a ${cfpData[i][1]} size of home (score: ${cfpData[i][3]}).`;
-//     output.appendChild(newH2);
-//     output.appendChild(newH3);
-//     output.appendChild(newP);
-//   }
-// }
+function displayOutput() {
+  for (arr of cfpData){
+    const output = document.getElementById("output");
+    const newH2 = document.createElement("h2");
+    newH2.textContent = `Carbon Footprint is ${arr[4]}.`;
+    const newH3 = document.createElement("h3");
+    newH3.textContent = `Based on number in and size of home`;
+    const newP = document.createElement("p");
+    newP.textContent = `This number is based on the number of people in the house of ${arr[0]} (score: ${arr[2]})`;
+    newP.textContent += ` and a ${arr[1]} size of home (score: ${arr[3]}).`;
+    output.appendChild(newH2);
+    output.appendChild(newH3);
+    output.appendChild(newP);
+  }
+}
 
 start(7, "apartment");
 start(7, "large");
@@ -132,8 +102,4 @@ start(1, "large");
 start(1, "medium");
 start(1, "small");
 
-// const cfpData = [{
-
-// }, {
-
-// }]
+displayOutput()
