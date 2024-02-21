@@ -76,7 +76,7 @@ FORM.addEventListener('submit', function(e){
   const lastName = FORM.lastname.value;
   const houseMembers = parseInt(FORM.housem.value);
   const houseSize = FORM.houses.value;
-  start(houseMembers, houseSize);
+  start(firstName, lastName, houseMembers, houseSize);
   OUTPUT.innerHTML = "";
   displayOutput();
   FORM.rest();
