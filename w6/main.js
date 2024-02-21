@@ -56,7 +56,7 @@ function displayOutput() {
   for (obj of cfpData){
     console.log(obj)
     const newH2 = document.createElement("h2");
-    newH2.textContent = `Carbon Footprint is ${obj.cfpTotal}.`;
+    newH2.textContent = `Carbon Footprint is ${obj.cfpTotal} of ${obj.firstName} ${obj.lastName}`;
     const newH3 = document.createElement("h3");
     newH3.textContent = `Based on number in and size of home`;
     const newP = document.createElement("p");
@@ -76,10 +76,10 @@ FORM.addEventListener('submit', function(e){
   const lastName = FORM.lastname.value;
   const houseMembers = parseInt(FORM.housem.value);
   const houseSize = FORM.houses.value;
-  start(firstName, lastName, houseMembers, houseSize);
+  start(houseMembers, houseSize);
   OUTPUT.innerHTML = "";
   displayOutput();
-  FORM.rest();
+  FORM.reset();
 })
 
 // Does the apartment score correct? If not why not?
