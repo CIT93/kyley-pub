@@ -29,11 +29,15 @@ function renderTblBtn(index, data) {
     renderTbl(data);
   });
   btnEdit.addEventListener('click', function(e){
-    
+    FORM[0].value = data.firstName;
+    FORM[1].value = data.lastName;
+    FORM[2].value = data.houseM;
+    FORM[3].value = data.houseS;
+    data.splice(index, 1);
+    renderTbl(data);
   })
   return td;
 }
-
 
 
   function renderTblBody(data) {
@@ -58,10 +62,13 @@ function renderTblBtn(index, data) {
 
 
   function renderTbl(data) {
-    const table = renderTblHeading();
-    const tbody = renderTblBody(data);
-    table.appendChild(tbody);
-    TBL.appendChild(table);
+    TBL.innerHTML = "";
+    if (data.length !== 0) {
+      const table = renderTblHeading();
+      const tbody = renderTblBody(data);
+      table.appendChild(tbody);
+      TBL.appendChild(table);
+    }
   };
 
   export {renderTbl};
