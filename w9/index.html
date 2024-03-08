@@ -8,7 +8,6 @@
     <link rel="stylesheet" href="style.css">
   </head>
   <body>
-    <div id="error"></div>
     <form id="form">
       <fieldset>
         <legend>Calculating Your Carbon Footprint Points</legend>
@@ -36,7 +35,8 @@
               <option value="small">Small</option>
             </select>
         </div>
-        <button type="submit">Submit</button>
+        <button type="submit">Submit</button><br>
+        <span id="submitError" class="error"></span>
       </fieldset>
     </form>
     <div id="output"></div>
