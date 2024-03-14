@@ -1,11 +1,11 @@
 import { cfpData } from "./global.js";
 
-const saveLS = function() {
+const saveLS = () => {
     const serializedArr = JSON.stringify(cfpData);
     localStorage.setItem("cfp", serializedArr);
 }
 
-const getLS = function() {
+const getLS = () => {
     const retrievedArr = localStorage.getItem("cfp");
     if(retrievedArr !== null) {
         return JSON.parse(retrievedArr);
