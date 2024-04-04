@@ -34,11 +34,11 @@ const renderTblBtn = (obj, index, data) => {
     onUpdate(index, data);
   })
   btnEdit.addEventListener('click', e => {
-    FORM.firstName.value = obj.firstName;
-    FORM.lastName.value = obj.lastName;
-    FORM.housem.value = obj.houseM;
-    FORM.houses.value = obj.houseS;
-    FORM.foodc.value = obj.foodC
+    FORM.firstName.value = obj.first;
+    FORM.lastName.value = obj.last;
+    FORM.housem.value = obj.houseMembers;
+    FORM.houses.value = obj.houseSize;
+    FORM.foodc.value = obj.foodChoice;
     onUpdate(index, data);
   })
   return td;
