@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script type="module" src="main.js"></script>
+    <link rel="stylesheet" href="style.css"/>
+    <title>Week 13 - Async Speed Eating - PUB</title>
+</head>
+<body>
+    <form id="form">
+        <fieldset>
+            <legend>World Champion Eater!!</legend>
+            <div>
+                <label>Type of Food:</label>
+                <select name="foods" required>
+                    <option value="">---Types of Food---</option>
+                    <option value="hotdogs">Hotdogs</option>
+                    <option value="wings">Wings</option>
+                    <option value="tacos">Tacos</option>
+                    <option value="twinkies">Twinkies</option>
+                </select>
+            </div>
+            <div>
+                <label>Number of Rounds:</label>
+                <input type="text" name="rounds" min="1" maxlength="20" required/>
+            </div>
+            <div>
+                <label>Time Duration (MIN):</label>
+                <input type="text" name="time" min="1" max="1000" required/>
+            </div>
+            <h1>Click Start to Begin!</h1>
+            <button type="submit">Start</button>
+        </fieldset>
+    </form>
+    <div id="output"></div>
+</body>
+</html>
