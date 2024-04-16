@@ -125,3 +125,24 @@
 
 // start()
 // -----------------------------------------------------------------------------------------------------------------------
+
+
+async function start() {
+  try {
+    const data = await fetch('https://api.weather.gov/gridpoints/OKX/35,35/forecast');
+    const result = await data.json();
+    onSuccess(result.properties.periods[1].shortForecast);
+  } catch(e) {
+    onError(e);
+  }
+}
+
+function onSuccess(result) {
+  console.log(`Success ${result}`);
+}
+
+function onError(e) {
+  console.log(`ERROR: ${e}`);
+}
+
+start();
