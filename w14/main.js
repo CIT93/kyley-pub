@@ -129,16 +129,16 @@
 
 async function start() {
   try {
-    const data = await fetch('https://api.weather.gov/gridpoints/OKX/35,35/forecast');
+    const data = await fetch('https://api.weather.gov/gridpoints/HNX/53,99/forecast');
     const result = await data.json();
-    onSuccess(result.properties.periods[1].shortForecast);
+    onSuccess(result.properties.periods[0].temperature);
   } catch(e) {
     onError(e);
   }
 }
 
 function onSuccess(result) {
-  console.log(`Success ${result}`);
+  console.log(`The temperature low of Fresno, California is ${result}`);
 }
 
 function onError(e) {
