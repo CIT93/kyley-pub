@@ -61,6 +61,7 @@ const renderTblBtn = (obj, index, data) => {
     FORM.foodc.value = obj.foodChoice;
     FORM.otherfood.value = obj.otherFood;
     FORM.water.value = obj.waterConsumption;
+    FORM.waterdoubled.value = obj.waterDoubled;
     onUpdate(index, data);
   })
   return td;

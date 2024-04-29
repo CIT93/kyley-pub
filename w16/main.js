@@ -29,7 +29,7 @@ FORM.addEventListener('submit', e => {
     e.preventDefault();
     if (FNAME.value !== '' && LNAME.value !== '') {
         SUBMIT.textContent = '';
-        const fpObj = new FP(FNAME.value, LNAME.value, parseInt(FORM.housem.value), FORM.houses.value, FORM.foodc.value, FORM.otherfood.value, FORM.water.value);
+        const fpObj = new FP(FNAME.value, LNAME.value, parseInt(FORM.housem.value), FORM.houses.value, FORM.foodc.value, FORM.otherfood.value, FORM.water.value, FORM.waterdoubled.value);
         cfpData.push(fpObj);
         saveLS(cfpData);
         renderTbl(cfpData);
