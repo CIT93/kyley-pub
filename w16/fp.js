@@ -1,5 +1,15 @@
 class FP {
-  constructor(first, last, houseMembers, houseSize, foodChoice, otherFood, waterConsumption, waterDoubled) {
+  constructor(
+    first,
+    last,
+    houseMembers,
+    houseSize,
+    foodChoice,
+    otherFood,
+    waterConsumption,
+    waterDoubled,
+    housePurchase
+  ) {
     this.first = first;
     this.last = last;
     this.houseMembers = houseMembers;
@@ -8,6 +18,7 @@ class FP {
     this.otherFood = otherFood;
     this.waterConsumption = waterConsumption;
     this.waterDoubled = waterDoubled;
+    this.housePurchase = housePurchase;
     this.houseHoldPoints();
     this.houseSizePoints();
     this.foodChoicePoints();
@@ -37,7 +48,7 @@ class FP {
       this.houseSizePoints = 10;
     } else if (this.houseSize === "medium") {
       this.houseSizePoints = 7;
-    } else if (this.houseSize = "small") {
+    } else if ((this.houseSize = "small")) {
       this.houseSizePoints = 4;
     } else if (this.houseSize === "apartment") {
       this.houseSizePoints = 2;
@@ -79,10 +90,20 @@ class FP {
   total() {
     if (this.waterDoubled === "yes") {
       this.total =
-      this.houseHoldPoints + this.houseSizePoints + this.foodChoicePoints + this.otherFoodPoints + (this.waterConsumptionPoints * 2);
+        this.houseHoldPoints +
+        this.houseSizePoints +
+        this.foodChoicePoints +
+        this.otherFoodPoints +
+        (this.waterConsumptionPoints * 2) +
+        this.housePurchase
     } else if (this.waterDoubled === "no") {
       this.total =
-      this.houseHoldPoints + this.houseSizePoints + this.foodChoicePoints + this.otherFoodPoints + this.waterConsumptionPoints;
+        this.houseHoldPoints +
+        this.houseSizePoints +
+        this.foodChoicePoints +
+        this.otherFoodPoints +
+        this.waterConsumptionPoints +
+        this.housePurchase
     }
   }
 }
