@@ -1,0 +1,1 @@
+I believe the correct solution would be to create checkboxes with values assigned to them that the user would check if they do and leave blank if they do not. If the checkbox is checked the value will be added and if not there will be no value saved to add.

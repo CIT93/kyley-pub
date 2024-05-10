@@ -1,0 +1,1 @@
+You will be needing to use if and else if statements in order to make the code work. The first code will ask how many times you run the dishwasher or washing machine. There will be an option for 0 or for no washing machine which will apply no footprint points. The conditional for each if and else statement will reflect whether the code will run or be skipped.
