@@ -1,12 +1,12 @@
-import { cfpData } from "./global.js";
+import {appData} from "./global.js";
 
 const saveLS = () => {
-    const serializedArr = JSON.stringify(cfpData);
-    localStorage.setItem("cfp", serializedArr);
+    const serializedArr = JSON.stringify(appData);
+    localStorage.setItem("app", serializedArr);
 }
 
 const getLS = () => {
-    const retrievedArr = localStorage.getItem("cfp");
+    const retrievedArr = localStorage.getItem("app");
     if(retrievedArr !== null) {
         return JSON.parse(retrievedArr);
     } else {
@@ -14,6 +14,4 @@ const getLS = () => {
     }
 }
 
-
-
-export {cfpData, saveLS, getLS};
+export {appData, saveLS, getLS};

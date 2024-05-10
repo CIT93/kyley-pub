@@ -1,31 +1,11 @@
 import {FORM, TBL} from "./global.js";
-import {saveLS} from "./storage.js";
-
-
-const averageData = (data) => {
-  const reduceData = data.reduce((sum, ea) => 
-    sum + ea.total, 
-    0,
-  );
-  const tableHOF = document.getElementById("table-id");
-  const newTR = tableHOF.insertRow(-1);
-  const newTD_1 = newTR.insertCell(0);
-  const newTD_2 = newTR.insertCell(0);
-  const newTD_3 = newTR.insertCell(0);
-  const newLabel = document.createTextNode(`Average Footprint `);
-  const newText = document.createTextNode(`${Math.floor(reduceData/data.length)}`)
-  newTD_2.appendChild(newLabel);
-  newTD_1.appendChild(newText);
-}
-
-
+import {saveLS, getLS} from "./storage.js";
 
 const renderTblHeading = () => {
     const table = document.createElement("table");
-    table.setAttribute("id", "table-id");
     const thead = document.createElement("thead");
     const tr = document.createElement("tr");
-    const headingTextArr = ["First", "Last", "Footprint Total", "Actions"];
+    const headingTextArr = ["First Name", "Last Name", "Birth Year", "Current Year", "Month", "Hemisphere Location", "Age", "Season" , "Actions"];
     headingTextArr.forEach(text => {
         const th = document.createElement("th");
         th.textContent = text;
@@ -56,23 +36,10 @@ const renderTblBtn = (obj, index, data) => {
   btnEdit.addEventListener('click', e => {
     FORM.firstName.value = obj.first;
     FORM.lastName.value = obj.last;
-    FORM.housem.value = obj.houseMembers;
-    FORM.houses.value = obj.houseSize;
-    FORM.foodc.value = obj.foodChoice;
-    FORM.otherfood.value = obj.otherFood;
-    FORM.water.value = obj.waterConsumption;
-    FORM.waterdoubled.value = obj.waterDoubled;
-    FORM.housepurchase.value = obj.housePurchase.toString();
-    FORM.waste.value = obj.wastePoints.toString();
-    FORM.glass.checked = obj.recycle.glass;
-    FORM.plastic.checked = obj.recycle.plastic;
-    FORM.paper.checked = obj.recycle.paper;
-    FORM.aluminum.checked = obj.recycle.aluminum;
-    FORM.steel.checked = obj.recycle.steel;
-    FORM.compost.checked = obj.recycle.compost;
-    FORM.personal.value = obj.personalPoints.toString();
-    FORM.public.value = obj.publicPoints.toString();
-    FORM.flight.value = obj.flightPoints.toString();
+    FORM.startyear.value = obj.birthYear;
+    FORM.currentyear.value = obj.currentYear;
+    FORM.month.value = obj.monthNumber;
+    FORM.hemisphere.value = obj.hemiLocation;
     onUpdate(index, data);
   })
   return td;
@@ -82,7 +49,7 @@ const renderTblBody = data => {
   const tbody = document.createElement("tbody");
   data.forEach((obj, index) => {
     const tr = document.createElement("tr");
-    const keys = ["first", "last", "total"]
+    const keys = ["first", "last", "birthYear", "currentYear", "calendarMonthName", "hemiLocation", "userAge", "earthSeason"]
       keys.forEach(key => {
         const td = document.createElement("td");
         td.textContent = obj[key];
@@ -102,11 +69,13 @@ const renderTbl = data => {
     const tbody = renderTblBody(data);
     table.appendChild(tbody);
     TBL.appendChild(table);
-    averageData(data);
   }
-    
+}
+
+const dataFromLocalStorage = getLS();
+if (dataFromLocalStorage) {
+    renderTbl(dataFromLocalStorage);
 }
 
 
 export {renderTbl};
-

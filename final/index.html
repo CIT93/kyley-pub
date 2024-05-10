@@ -1,158 +1,56 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MY APP: What season is it for You?!</title>
     <script type="module" src="main.js"></script>
-    <title>Final - Carbon Footprint - PUB</title>
     <link rel="stylesheet" href="style.css">
-  </head>
-  <body>
+</head>
+<body>
     <form id="form">
-      <fieldset>
-        <legend>Calculating Your Carbon Footprint Points</legend>
-        <div>
-            <label>First Name:</label>
-            <input type="text" name="firstname" id="firstName" maxlength="20"/>
-            <span id="firstNameError" class="error"></span>
-        </div>
-        <div>
-            <label>Last Name:</label>
-            <input type="text" name="lastname" id="lastName" maxlength="20"/>
-            <span id="lastNameError" class="error"></span>
-        </div>
-        <div>
-            <label>Count the members of your household</label>
-            <input type="number" name="housem" id="housem" min="1" max="100" required/>
-        </div>
-        <div>
-            <label>Consider the size of your home</label>
-            <select name="houses" id="houses" required>
-              <option value="">---Please enter size of home---</option>
-              <option value="apartment">Apartment</option>
-              <option value="large">Large</option>
-              <option value="medium">Medium</option>
-              <option value="small">Small</option>
-            </select>
-        </div>
-        <div>
-          <label>Evaluate your food choices</label>
-          <select name="foodc" id="foodc" required>
-            <option value="">---Please select your food option---</option>
-            <option value="daily">Domestic daily</option>
-            <option value="weekly">Domestic weekly</option>
-            <option value="vegetarian">Vegetarian</option>
-            <option value="wild">Vegan or only wild meat</option>
-            <option value="packaged">Mostly prepackaged</option>
-          </select>
-      </div>
-      <div>
-        <label>Evaluate your food choices part 2</label>
-        <select name="otherfood" required>
-            <option value="">---Type of food---</option>
-            <option value="prepackaged">Mostly packaged food</option>
-            <option value="balanced">Mostly balanced food</option>
-            <option value="fresh">Mostly healthy food</option>
-        </select>
-    </div>
-    <div>
-      <label>Evaluate Your Water Consumption</label>
-      <select name="water" required>
-          <option value="">---How many times do you run dishwasher or washing machine?---</option>
-          <option value="high">More than 9 times per week</option>
-          <option value="average">Between 4 to 9 times per week</option>
-          <option value="low">Between 1 to 3 times per week</option>
-          <option value="none">Don't have a dishwasher or washing machine</option>
-      </select>
-    </div>
-    <div>
-      <label>Evaluate Your Water Consumption part 2</label>
-      <select name="waterdoubled" required>
-        <option value="">---Do you have both a dishwasher and washing machine?---</option>
-        <option value="yes">Yes</option>
-        <option value="no">No</option>
-      </select>
-    </div>
-    <div>
-      <label>Determine how many household purchases you make each year</label>
-      <select name="housepurchase" required>
-          <option value="">---How many household purchases do you make yearly---</option>
-          <option value="10">More than 7 new items per year</option>
-          <option value="8">Between 5 to 7 new items per year</option>
-          <option value="6">Between 3 to 5 new items per year</option>
-          <option value="4">Less than 3 items per year</option>
-          <option value="2">Almost nothing or secondhand items</option>
-      </select>
-    </div>
-  <div>
-      <label>Consider how much waste you produce</label>
-      <select name="waste" required>
-          <option value="">---How much waste do you produce each week---</option>
-          <option value="50">4 or more cans each week</option>
-          <option value="40">3 cans each week</option>
-          <option value="30">2 cans each week</option>
-          <option value="20">1 cans each week</option>
-          <option value="5">1/2 or less cans each week</option>
-      </select>
-  </div>
-  <div>
-      <label>Identify the amount of waste that you recycle</label>
-          <label>
-              <input class="recycle" type="checkbox" name="glass" id="glass" value="glass">
-              Glass
-          </label>
-          <label>
-              <input class="recycle" type="checkbox" name="plastic" id="plastic" value="plastic">
-              Plastic
-          </label>
-          <label>
-              <input class="recycle" type="checkbox" name="paper" id="paper" value="paper">
-              Paper
-          </label>
-          <label>
-              <input class="recycle" type="checkbox" name="aluminum" id="aluminum" value="aluminum">
-              Aluminum
-          </label>
-          <label>
-              <input class="recycle" type="checkbox" name="steel" id="steel" value="steel">
-              Steel
-          </label>
-          <label>
-              <input class="recycle" type="checkbox" name="compost" id="compost" value="compost">
-              Food Waste (Composting)
-          </label>
-  </div>
-  <div>
-    <label>Tally up your annual transportation scores</label>
-    <select name="personal" required>
-        <option value="">---Mileage for PERSONAL VEHICLE usage---</option>
-        <option value="12">15,000 or more per year</option>
-        <option value="10">10,000 to 15,000 per year</option>
-        <option value="6">1,000 to 10,000 per year</option>
-        <option value="4">1,000 or less per year</option>
-        <option value="0">Do not own a car</option>
-    </select>
-    <select name="public" required>
-        <option value="">---Mileage for PUBLIC usage---</option>
-        <option value="12">20,000 or more per year</option>
-        <option value="10">15,000 to 20,000 per year</option>
-        <option value="6">10,000 to 15,000 per year</option>
-        <option value="4">1,000 to 10,000 per year</option>
-        <option value="2">1,000 or less per year</option>
-        <option value="0">Do not use public transportation</option>
-    </select>
-    <select name="flight" required>
-        <option value="">---Mileage for FLIGHT usage---</option>
-        <option value="20">Out of continent flights per year</option>
-        <option value="6">Nearby states or country flights per year</option>
-        <option value="2">Short distances flights per year</option>
-    </select>
-</div>
-        <button type="submit">Submit</button><br>
-        <span id="submitError" class="error"></span>
-      </fieldset>
+        <fieldset>
+            <legend>WHAT SEASON IS IT FOR YOU?</legend>
+            <div>
+                <label>First Name:</label>
+                <input type="text" name="firstname" id="firstName" maxlength="20"/>
+                <span id="firstNameError" class="error"></span>
+            </div>
+            <div>
+                <label>Last Name:</label>
+                <input type="text" name="lastname" id="lastName" maxlength="20"/>
+                <span id="lastNameError" class="error"></span>
+            </div>
+            <div>
+                <label>What is the calendar year were you born?</label>
+                <input type="number" name="startyear" id="startyear" min="0" max="9999" required/>
+                <option value="">👶</option>
+            </div>
+            <div>
+                <label>What is the current calendar year?</label>
+                <input type="number" name="currentyear" id="currentyear" min="0" max="9999" required/>
+                <option value="">🎁</option>
+            </div>
+            <div>
+                <label>What is the current calendar month?</label>
+                <input type="number" name="month" id="month" min="1" max="12" required/>
+                <option value="">📆</option>
+            </div>
+            <div>
+                <label>At your location what hemisphere do you reside in?</label>
+                <select type="text" name="hemisphere" id="hemisphere" required>
+                    <option value="">---📍Northern or Southern Hemisphere📍---</option>
+                    <option value="Southern">Southern</option>
+                    <option value="Northern">Northern</option>
+                </select>
+            </div>
+            <button type="submit">Submit</button>
+            <span id="submitError" class="error"></span>
+        </fieldset>
     </form>
+    <div id="all-data"></div>
     <div id="output"></div>
-    <div id="tab-data"></div>
-  </body>
+    <div class="background"></div>
+    <div class="content"></div>
+</body>
 </html>
